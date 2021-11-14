@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'chxuan/cpp-mode'
 Plug 'chxuan/vim-edit'
 Plug 'chxuan/vim-buffer'
-Plug 'preservim/tagbar'
+"Plug 'preservim/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'

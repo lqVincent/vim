@@ -38,14 +38,16 @@ nnoremap <leader><leader>nf :NERDTreeFind<cr>
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 
 " tagbar
-nnoremap <silent> <leader>t :TagbarToggle<cr>
+"nnoremap <silent> <leader>t :TagbarToggle<cr>
 
 " vim-easymotion
 map <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
 
 " LeaderF
-nnoremap <leader>f :LeaderfFile .<cr>
+nnoremap <leader>ff :LeaderfFile .<cr>
+nnoremap <leader>fu :LeaderfFunction!<cr>
+nnoremap <leader>fm :LeaderfMru<cr>
 
 " ack
 nnoremap <leader>F :Ack!<space>
