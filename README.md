@@ -12,5 +12,5 @@
  mv ~/.vimrc ~/.vim/vim/.vimrc_bak
  ln -s ~/.vim/vim/.vimrc ~/
  mv ~/.ycm_extra_conf.py ~/.vim/vim/.ycm_extra_conf.py_bak
- cp ~/.vim/vim/.ycm_extra_conf.py ~/
+ ln -s ~/.vim/vim/.ycm_extra_conf.py ~/
  ```
