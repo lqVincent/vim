@@ -6,9 +6,9 @@
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>vk :edit ~/.vim/vim/keymap.vim<cr>
 nnoremap <leader>vi :edit ~/.vim/vim/init.vim<cr>
-nnoremap <leader>vp :edit ~/.vim/vim/plug.vim<cr>
+nnoremap <leader>vp :edit ~/.vim/vim/plug_in.vim<cr>
 nnoremap <leader>vpc :edit ~/.vim/vim/plug_cfg.vim<cr>
-nnoremap <leader>vm :edit ~/.vim/vim/markdown.editor.vim <cr>
+nnoremap <leader>vm :edit ~/.vim/vim/markdown.vim <cr>
 
 " 重新加载vimrc文件
 nnoremap <leader>s :source $MYVIMRC<cr>

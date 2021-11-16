@@ -53,6 +53,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/nerdcommenter'  
 Plug 'justinmk/vim-dirvish'
 Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()  
 
