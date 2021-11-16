@@ -48,6 +48,7 @@ let g:Lf_WildIgnore = {
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
             \}
 let g:Lf_UseCache = 0
+"let g:Lf_WindowPosition = 'popup'
 
 " echodoc.vim
 let g:echodoc_enable_at_startup = 1
@@ -56,6 +57,8 @@ let g:echodoc_enable_at_startup = 1
 " 如果不指定python解释器路径，ycm会自己搜索一个合适的(与编译ycm时使用的python版本匹配)
 " let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
 let g:ycm_confirm_extra_conf = 0 
+"关闭诊断提示
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_error_symbol = '✗'
 let g:ycm_warning_symbol = '✹'
 let g:ycm_seed_identifiers_with_syntax = 1 
@@ -103,3 +106,45 @@ if !isdirectory(s:vim_tags)
 endif
 """"""""""""""""""""""""""vim-gutentags end""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""ale begin""""""""""""""""""""""""""""
+let g:ale_completion_delay = 500
+let g:ale_echo_delay = 20
+let g:ale_lint_delay = 500
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+let g:ale_c_cppcheck_options = ''
+let g:ale_cpp_cppcheck_options = ''
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '✹'
+
+"----------------linters begin----------------
+let g:ale_linters = {
+			\ 'c': ['gcc', 'cppcheck', 'splint'],
+			\ 'cpp': ['gcc', 'cppcheck'],
+			\ 'python': ['flake8', 'pylint'],
+			\ 'lua': ['luac'],
+			\ 'go': ['go build', 'gofmt'],
+			\ 'java': ['javac'],
+			\ 'javascript': ['eslint'],
+			\ }
+
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+let g:ale_lua_luacheck_options = '-d'
+
+if executable('gcc') == 0 && executable('clang')
+	let g:ale_linters.c += ['clang']
+	let g:ale_linters.cpp += ['clang']
+endif
+"----------------linters end-----------------
+
+"---------------cppcheck begin---------------
+let s:cppcheck = '--enable=warning,style,portability,performance'
+let g:ale_c_cppcheck_options = s:cppcheck
+let g:ale_cpp_cppcheck_options = s:cppcheck
+"---------------cppcheck end-----------------
+""""""""""""""""""""""""""ale end""""""""""""""""""""""""""""

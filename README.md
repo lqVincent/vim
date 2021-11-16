@@ -13,4 +13,5 @@
  ln -s ~/.vim/vim/.vimrc ~/
  mv ~/.ycm_extra_conf.py ~/.vim/vim/.ycm_extra_conf.py_bak
  ln -s ~/.vim/vim/.ycm_extra_conf.py ~/
+ //更新插件
  ```

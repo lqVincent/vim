@@ -51,6 +51,8 @@ Plug 'tamlok/vim-markdown'
 Plug 'ludovicchabant/vim-gutentags' 
 "自动注释
 Plug 'preservim/nerdcommenter'  
+Plug 'justinmk/vim-dirvish'
+Plug 'dense-analysis/ale'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()  
 
@@ -69,8 +71,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'ferrine/md-img-paste.vim'
-"自动检查
-"Plug 'dense-analysis/ale'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

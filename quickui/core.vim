@@ -1,3 +1,8 @@
+source ~/.vim/vim/quickui/preview.vim
+source ~/.vim/vim/quickui/style.vim
+source ~/.vim/vim/quickui/tags.vim
+source ~/.vim/vim/quickui/tools.vim
+source ~/.vim/vim/quickui/utils.vim
 "======================================================================
 "
 " core.vim - 

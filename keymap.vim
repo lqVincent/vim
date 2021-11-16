@@ -1,8 +1,13 @@
+" 使用option键作快捷键时，需要：
+" 1.设置iterm2 -> profiles -> keys -> General:两个option key都设置为Esc++
+" 2.map时使用<esc>key,例如 nnoremap <esc>s :w<CR>
+
 " 编辑vimrc相关配置文件
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>vk :edit ~/.vim/vim/keymap.vim<cr>
 nnoremap <leader>vi :edit ~/.vim/vim/init.vim<cr>
 nnoremap <leader>vp :edit ~/.vim/vim/plug.vim<cr>
+nnoremap <leader>vpc :edit ~/.vim/vim/plug_cfg.vim<cr>
 nnoremap <leader>vm :edit ~/.vim/vim/markdown.editor.vim <cr>
 
 " 重新加载vimrc文件
@@ -111,7 +116,8 @@ nnoremap <leader>] :YcmCompleter GoToDefinition<cr>
 nmap <F5> :YcmDiags<cr>
 
 """""""""""""""""""""""""""forkd form skywind3000/vim begin""""""""""""""""""""""""""
-noremap <c-l> :call quickui#tools#preview_tag('')<cr>
-noremap <c-j> :call quickui#preview#scroll(2)<cr>
-noremap <c-k> :call quickui#preview#scroll(-2)<cr>
+nnoremap <esc>p :call quickui#tools#preview_tag('')<cr>
+nnoremap <esc>j :call quickui#preview#scroll(3)<cr>
+nnoremap <esc>k :call quickui#preview#scroll(-3)<cr>
 """""""""""""""""""""""""""forkd form skywind3000/vim end""""""""""""""""""""""""""
+noremap <esc><space> <Esc>
