@@ -1,16 +1,16 @@
-" 使用option键作快捷键时，需要：
+" 使用mac option键作快捷键时，需要：
 " 1.设置iterm2 -> profiles -> keys -> General:两个option key都设置为Esc++
 " 2.map时使用<esc>key,例如 nnoremap <esc>s :w<CR>
 
-" 编辑vimrc相关配置文件
+" edit vim cfg
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>vk :edit ~/.vim/vim/keymap.vim<cr>
 nnoremap <leader>vi :edit ~/.vim/vim/init.vim<cr>
-nnoremap <leader>vp :edit ~/.vim/vim/plug_in.vim<cr>
+nnoremap <leader>vpi :edit ~/.vim/vim/plug_in.vim<cr>
 nnoremap <leader>vpc :edit ~/.vim/vim/plug_cfg.vim<cr>
 nnoremap <leader>vm :edit ~/.vim/vim/markdown.vim <cr>
 
-" 重新加载vimrc文件
+" reload vimrc
 nnoremap <leader>s :source $MYVIMRC<cr>
 
 " 查看vimplus的help文件
@@ -31,16 +31,30 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" 调整窗口大小
+nnoremap <F9> <c-w>3<<cr>
+nnoremap <F10> <c-w>3><cr>
+nnoremap <F1> <c-w>3-<cr>
+nnoremap <F2> <c-w>3+<cr>
+
+" 关闭指定位置的窗口
+nnoremap <leader>jd <c-w>j:CloseBuffer<cr>
+
+" d\c\v时，对整个单词生效
+nnoremap dw diw
+nnoremap cw ciw
+nnoremap vw viw
+
 " 按照//对齐
 nnoremap <leader>// :Tab /\/\/<cr> 
 nnoremap <leader>= :Tab /=<cr> 
 
-" 清空高亮，先停止使用vim-slash插件，这个插件会使光标离开目标词后停止高亮.
+" 清空高亮，禁用vim-slash插件，这个插件会使光标离开目标词后停止高亮.
 nnoremap <leader>x :noh<cr>
 
 " NERDTree
-nnoremap <leader><leader>nf :NERDTreeFind<cr> 
-nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr> 
+nnoremap <leader>nn :NERDTreeToggle<cr>
 
 " tagbar
 "nnoremap <silent> <leader>t :TagbarToggle<cr>
@@ -50,12 +64,14 @@ map <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
 
 " LeaderF
-nnoremap <leader>ff :LeaderfFile .<cr>
-nnoremap <leader>fu :LeaderfFunction!<cr>
+nnoremap <leader>ff :LeaderfFile<cr>
+nnoremap <leader>fu :LeaderfFunction<cr>
 nnoremap <leader>fm :LeaderfMru<cr>
 
 " ack
-nnoremap <leader>F :Ack!<space>
+nnoremap <leader>aa :Ack!<space>
+" 搜索当前单词
+nnoremap <leader>aw "0yiw :Ack! <c-r>"
 
 " incsearch.vim
 map /  <Plug>(incsearch-forward)
@@ -92,12 +108,6 @@ nnoremap <C-D> :q<CR>
 vnoremap <C-D> <C-C>:q<CR>
 inoremap <C-D> <Esc>:q<CR>
 
-" 调整窗口大小
-nnoremap <F9> <c-w>3<<cr>
-nnoremap <F10> <c-w>3><cr>
-nnoremap <F1> <c-w>3-<cr>
-nnoremap <F2> <c-w>3+<cr>
-
 " 打开文件
 nnoremap <leader><leader>o :e 
 
@@ -115,9 +125,21 @@ nnoremap <leader>o :YcmCompleter GoToInclude<cr>
 nnoremap <leader>] :YcmCompleter GoToDefinition<cr>
 nmap <F5> :YcmDiags<cr>
 
-"""""""""""""""""""""""""""forkd form skywind3000/vim begin""""""""""""""""""""""""""
-nnoremap <esc>p :call quickui#tools#preview_tag('')<cr>
-nnoremap <esc>j :call quickui#preview#scroll(3)<cr>
-nnoremap <esc>k :call quickui#preview#scroll(-3)<cr>
-"""""""""""""""""""""""""""forkd form skywind3000/vim end""""""""""""""""""""""""""
-noremap <esc><space> <Esc>
+" LSP
+nnoremap gd :LspDefinition<cr>
+nnoremap gp :LspPeekDefinition<cr>
+nnoremap gs :LspWorkspaceSymbol<cr>
+nnoremap gr :LspReferences<cr>
+nnoremap K :LspHover<cr>
+nnoremap gj : call lsp#scroll(+5)<cr>
+nnoremap gk : call lsp#scroll(-5)<cr>
+
+" highlighting, thanks for https://github.com/sk1418/myConf/blob/master/common/.vimrc#L729
+nnoremap <silent> <leader>0 :call ClearAllHi()<cr>
+nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
+nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
+nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
+nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
+nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
+nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
+
