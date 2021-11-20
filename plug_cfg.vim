@@ -106,7 +106,7 @@ if !isdirectory(s:vim_tags)
 endif
 """"""""""""""""""""""""""vim-gutentags end""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""ale begin""""""""""""""""""""""""""""
+""""""""""""""""""""""""""ale begin"""""""""""""""""""""""""
 let g:ale_completion_delay = 500
 let g:ale_echo_delay = 20
 let g:ale_lint_delay = 500
@@ -147,8 +147,9 @@ let s:cppcheck = '--enable=warning,style,portability,performance'
 let g:ale_c_cppcheck_options = s:cppcheck
 let g:ale_cpp_cppcheck_options = s:cppcheck
 "---------------cppcheck end-----------------
-""""""""""""""""""""""""""ale end""""""""""""""""""""""""""""
+""""""""""""""""""""""""""ale end"""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""lsp begin""""""""""""""""""""""""""
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
@@ -173,6 +174,6 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-""""""""""""""""""""""""""prabirshrestha/vim-lsp begin""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""prabirshrestha/vim-lsp end""""""""""""""""""""""""""""
+" 在cmdline显示当前行的错误信息,see :h vim-lsp
+let g:lsp_diagnostics_echo_cursor = 1
+""""""""""""""""""""""""lsp end"""""""""""""""""""""""""""""
