@@ -143,6 +143,8 @@ endif
 "----------------linters end-----------------
 
 "---------------cppcheck begin---------------
+"sudo apt install cppcheck
+"brew install cppcheck
 let s:cppcheck = '--enable=warning,style,portability,performance'
 let g:ale_c_cppcheck_options = s:cppcheck
 let g:ale_cpp_cppcheck_options = s:cppcheck
