@@ -148,6 +148,7 @@ endif
 let s:cppcheck = '--enable=warning,style,portability,performance'
 let g:ale_c_cppcheck_options = s:cppcheck
 let g:ale_cpp_cppcheck_options = s:cppcheck
+"let g:ale_c_parse_makefile = 1
 "---------------cppcheck end-----------------
 """"""""""""""""""""""""""ale end"""""""""""""""""""""""""""
 
@@ -164,7 +165,8 @@ endif
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    "下面这行会使lsp占用ctrl-]
+    "if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
     
