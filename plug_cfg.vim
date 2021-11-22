@@ -163,7 +163,7 @@ if executable('pyls')
 endif
 
 function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
+    "setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     "下面这行会使lsp占用ctrl-]
     "if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
@@ -180,4 +180,5 @@ augroup lsp_install
 augroup END
 " 在cmdline显示当前行的错误信息,see :h vim-lsp
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_document_code_action_signs_enabled = 0
 """"""""""""""""""""""""lsp end"""""""""""""""""""""""""""""

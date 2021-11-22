@@ -11,7 +11,7 @@ nnoremap <leader>vpc :edit ~/.vim/vim/plug_cfg.vim<cr>
 nnoremap <leader>vm :edit ~/.vim/vim/markdown.vim <cr>
 
 " reload vimrc
-nnoremap <leader>s :source $MYVIMRC<cr>
+nnoremap <leader><leader>s :source $MYVIMRC<cr>
 
 " 查看vimplus的help文件
 nnoremap <leader>h :view +let\ &l:modifiable=0 ~/.vimplus/help.md<cr>
@@ -104,6 +104,11 @@ nnoremap <C-S> :w<CR>
 vnoremap <C-S> <C-C>:w<CR>
 inoremap <C-S> <Esc>:w<CR>
 
+
+nnoremap <leader>s :w<CR>
+vnoremap <leader>s <C-C>:w<CR>
+inoremap <leader>s <Esc>:w<CR>
+
 nnoremap <C-D> :q<CR>
 vnoremap <C-D> <C-C>:q<CR>
 inoremap <C-D> <Esc>:q<CR>
@@ -143,3 +148,4 @@ nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
 
+nnoremap <silent> gh *N
