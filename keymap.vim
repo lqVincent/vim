@@ -50,7 +50,7 @@ nnoremap <leader>// :Tab /\/\/<cr>
 nnoremap <leader>= :Tab /=<cr> 
 
 " 清空高亮，禁用vim-slash插件，这个插件会使光标离开目标词后停止高亮.
-nnoremap <leader>x :noh<cr>
+nnoremap <silent><leader>x :noh<cr> :call ClearAllHi()<cr>
 
 " NERDTree
 nnoremap <leader>nf :NERDTreeFind<cr> 
