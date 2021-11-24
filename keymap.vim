@@ -1,6 +1,10 @@
 " 使用mac option键作快捷键时，需要：
+" 方法一：
 " 1.设置iterm2 -> profiles -> keys -> General:两个option key都设置为Esc++
 " 2.map时使用<esc>key,例如 nnoremap <esc>s :w<CR>
+" 方法二：
+" 在option
+" key为normal模式下，直接映射option+key对应的特殊符号，如option-s在Mac上是ß，则直接将ß映射到某一功能
 
 " edit vim cfg
 nnoremap <leader>e :edit $MYVIMRC<cr>
@@ -40,10 +44,11 @@ nnoremap <F2> <c-w>3+<cr>
 " 关闭指定位置的窗口
 nnoremap <leader>jd <c-w>j:CloseBuffer<cr>
 
-" d\c\v时，对整个单词生效
+" d\c\v\y时，对整个单词生效
 nnoremap dw diw
 nnoremap cw ciw
 nnoremap vw viw
+nnoremap yw yiw
 
 " 按照//对齐
 nnoremap <leader>// :Tab /\/\/<cr> 
@@ -89,10 +94,15 @@ nnoremap <leader>l :Tab /\|<cr>
 nnoremap <leader>= :Tab /=<cr>
 
 " vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-i> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+"noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+"noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+noremap <silent> <c-u> 6k<CR>
+noremap <silent> <c-d> 6j<CR>
+noremap <c-e> 6<c-e>
+noremap <c-y> 6<c-y>
 
 " gv
 nnoremap <leader>g :GV<cr>
@@ -109,9 +119,13 @@ nnoremap <leader>s :w<CR>
 vnoremap <leader>s <C-C>:w<CR>
 inoremap <leader>s <Esc>:w<CR>
 
-nnoremap <C-D> :q<CR>
-vnoremap <C-D> <C-C>:q<CR>
-inoremap <C-D> <Esc>:q<CR>
+nnoremap <leader><leader>d :q<CR>
+vnoremap <leader><leader>d <C-C>:q<CR>
+inoremap <leader><leader>d <Esc>:q<CR>
+" a-d
+nnoremap ∂ :q<CR>
+vnoremap ∂ <C-C>:q<CR>
+inoremap ∂ <Esc>:q<CR>
 
 " 打开文件
 nnoremap <leader><leader>o :e 
@@ -135,9 +149,13 @@ nnoremap gd :LspDefinition<cr>
 nnoremap gp :LspPeekDefinition<cr>
 nnoremap gs :LspWorkspaceSymbol<cr>
 nnoremap gr :LspReferences<cr>
-nnoremap K :LspHover<cr>
+nnoremap gK :LspHover<cr>
 nnoremap gj : call lsp#scroll(+5)<cr>
 nnoremap gk : call lsp#scroll(-5)<cr>
+" a-j
+nnoremap ∆ : call lsp#scroll(+5)<cr>
+" a-k
+nnoremap ˚ : call lsp#scroll(-5)<cr>
 
 " highlighting, thanks for https://github.com/sk1418/myConf/blob/master/common/.vimrc#L729
 nnoremap <silent> <leader>0 :call ClearAllHi()<cr>
@@ -149,3 +167,10 @@ nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
 
 nnoremap <silent> gh *N
+
+" for mac, option-key 
+" a-s
+nnoremap ß :w<cr>
+vnoremap ß <C-C>:w<CR>
+inoremap ß <Esc>:w<CR>
+

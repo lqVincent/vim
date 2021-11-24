@@ -181,4 +181,7 @@ augroup END
 " 在cmdline显示当前行的错误信息,see :h vim-lsp
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_document_code_action_signs_enabled = 0
-""""""""""""""""""""""""lsp end"""""""""""""""""""""""""""""
+" =========test
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_diagnostics_highlights_enabled = 0
+"""""""""""""""""""""""lsp end"""""""""""""""""""""""""""""
