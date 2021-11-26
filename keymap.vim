@@ -76,7 +76,7 @@ nnoremap <leader>fm :LeaderfMru<cr>
 " ack
 nnoremap <leader>aa :Ack!<space>
 " 搜索当前单词
-nnoremap <leader>aw "0yiw :Ack! <c-r>"
+"nnoremap <leader>aw "0yiw :Ack! <c-r>"
 
 " incsearch.vim
 map /  <Plug>(incsearch-forward)
@@ -122,10 +122,10 @@ inoremap <leader>s <Esc>:w<CR>
 nnoremap <leader><leader>d :q<CR>
 vnoremap <leader><leader>d <C-C>:q<CR>
 inoremap <leader><leader>d <Esc>:q<CR>
-" a-d
-nnoremap ∂ :q<CR>
-vnoremap ∂ <C-C>:q<CR>
-inoremap ∂ <Esc>:q<CR>
+
+nnoremap <c-d> :q<CR>
+vnoremap <c-d> <C-C>:q<CR>
+inoremap <c-d> <Esc>:q<CR>
 
 " 打开文件
 nnoremap <leader><leader>o :e 
