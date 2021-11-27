@@ -5,7 +5,6 @@ source ~/.vim/vim/keymap.vim
 source ~/.vim/vim/markdown.vim
 source ~/.vim/vim/normal.vim
 source ~/.vim/vim/tools/tools.vim
-source ~/.vim/vim/tools/diffchanges.vim
 
 "add at 2021-08-27:使vim的y,d,x,p能和系统的ctrl-c,ctrl-v结合使用
 "set clipboard=unnamed 
