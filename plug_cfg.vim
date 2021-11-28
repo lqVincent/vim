@@ -81,6 +81,7 @@ let g:ycm_semantic_triggers =  {
             \ }
 "关闭函数自动预览
 let g:ycm_auto_hover=''
+let g:ycm_disable_signature_help=1
 """"""""""""""""""""""""""""""""YCM end""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""vim-gutentags begin""""""""""""""""""""""""""""
@@ -181,7 +182,6 @@ augroup END
 " 在cmdline显示当前行的错误信息,see :h vim-lsp
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_document_code_action_signs_enabled = 0
-" =========test
-let g:lsp_document_highlight_enabled = 0
-let g:lsp_diagnostics_highlights_enabled = 0
+" 关闭函数自动提示
+let g:lsp_signature_help_enabled=0
 """""""""""""""""""""""lsp end"""""""""""""""""""""""""""""
