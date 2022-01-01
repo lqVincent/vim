@@ -13,7 +13,7 @@ nnoremap <leader>vi :edit ~/.vim/vim/init.vim<cr>
 nnoremap <leader>vpi :edit ~/.vim/vim/plug_in.vim<cr>
 nnoremap <leader>vpc :edit ~/.vim/vim/plug_cfg.vim<cr>
 nnoremap <leader>vm :edit ~/.vim/vim/markdown.vim <cr>
-
+nnoremap <leader>z :edit ~/.zsh_my_command<cr>
 " reload vimrc
 nnoremap <leader><leader>s :source $MYVIMRC<cr>
 
@@ -117,11 +117,11 @@ inoremap <C-S> <Esc>:w<CR>
 
 nnoremap <leader>s :w<CR>
 vnoremap <leader>s <C-C>:w<CR>
-inoremap <leader>s <Esc>:w<CR>
+"inoremap <leader>s <Esc>:w<CR>
 
 nnoremap <leader><leader>d :q<CR>
 vnoremap <leader><leader>d <C-C>:q<CR>
-inoremap <leader><leader>d <Esc>:q<CR>
+"inoremap <leader><leader>d <Esc>:q<CR>
 
 nnoremap <c-d> :q<CR>
 vnoremap <c-d> <C-C>:q<CR>
