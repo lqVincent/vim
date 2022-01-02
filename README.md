@@ -1,5 +1,5 @@
 # vim
-- ~/.vim/vim目录下的备份
+- 作用于~/.vim/vim目录
 - 结合vimplus使用
 
 # install:
