@@ -1,6 +1,6 @@
 # vim
-- 作用于~/.vim/vim目录
 - 结合vimplus使用
+- 作用于~/.vim/vim目录
 
 # install:
 - 先安装vimplus
