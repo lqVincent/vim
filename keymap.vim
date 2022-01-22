@@ -88,6 +88,7 @@ nnoremap <silent> <c-p> :PreviousBuffer<cr>
 nnoremap <silent> <c-n> :NextBuffer<cr>
 nnoremap <silent> <leader>d :CloseBuffer<cr>
 nnoremap <silent> <leader>D :BufOnly<cr>
+nnoremap <silent> <leader>q :q<cr>
 
 " tabular
 nnoremap <leader>l :Tab /\|<cr>
@@ -136,7 +137,7 @@ vmap <leader>y "+y
 nnoremap <leader>p "+p
 
 " vim中打开终端、调整适当大小
-nnoremap <leader><leader>t :terminal<cr><c-w><s-j><c-w>:resize 10<cr><c-w>
+nnoremap <leader><leader>t :terminal<cr><c-w><s-j><c-w>:resize 17<cr><c-w>
 
 " YCM
 nnoremap <leader>u :YcmCompleter GoToDeclaration<cr>
@@ -174,3 +175,15 @@ nnoremap ß :w<cr>
 vnoremap ß <C-C>:w<CR>
 inoremap ß <Esc>:w<CR>
 
+inoremap <c-j> <Down>
+inoremap <c-k> <Up>
+"inoremap <c-h> <Left>
+inoremap <c-l> <Right>
+
+tnoremap <leader>tn <c-\><c-n>
+
+"删除空行
+nnoremap <leader>ld :g/^$/d<cr>
+
+"删除空行以及只有空格的行
+nnoremap <leader>pd :g/^\s*$/d<cr>
